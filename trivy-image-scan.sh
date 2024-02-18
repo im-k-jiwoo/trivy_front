@@ -1,3 +1,4 @@
+#!/bin/bash
 ## Docker 이미지 이름
 dockerImageName="medicine/front:latest"
 
