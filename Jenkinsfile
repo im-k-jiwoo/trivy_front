@@ -9,9 +9,9 @@ pipeline {
         REPO = 'trivy/front'
         IMAGE_NAME = 'trivy/front:latest'
 
-        // TAG_VERSION = "v1.0.Beta"
-        // TAG = "${TAG_VERSION}${env.BUILD_ID}"
-        // NAMESPACE = 'front'
+        TAG_VERSION = "v1.0.Beta"
+        TAG = "${TAG_VERSION}${env.BUILD_ID}"
+        NAMESPACE = 'front'
         GIT_CREDENTIALS_ID = 'wujio'
     }
 
