@@ -9,10 +9,10 @@ pipeline {
         REPO = 'trivy/front'
         IMAGE_NAME = 'trivy/front:latest'
 
-        TAG_VERSION = "v1.0.Beta"
-        TAG = "${TAG_VERSION}${env.BUILD_ID}"
-        NAMESPACE = 'front'
-        GIT_CREDENTIALS_ID = 'jenkins-git-access'
+        // TAG_VERSION = "v1.0.Beta"
+        // TAG = "${TAG_VERSION}${env.BUILD_ID}"
+        // NAMESPACE = 'front'
+        GIT_CREDENTIALS_ID = 'wujio'
     }
 
 
@@ -36,6 +36,13 @@ pipeline {
         //     }
         // }
        
+        stage('Trivy Security') {
+              steps {
+                  sh 'chmod +x trivy-image-scan.sh' // 스크립트에 실행 권한 추가
+                  sh './trivy-image-scan.sh' // Trivy 이미지 스캔 실행
+                }
+            }
+
         stage('Build and Push Docker Image to ACR...') {
             steps {
                 script {
