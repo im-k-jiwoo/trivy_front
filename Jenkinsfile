@@ -6,8 +6,8 @@ pipeline {
         AZURE_TENANT_ID = '4ccd6048-181f-43a0-ba5a-7f48e8a4fa35'
         CONTAINER_REGISTRY = 'goodbirdacr.azurecr.io'
         RESOURCE_GROUP = 'AKS'
-        REPO = 'medicine/front'
-        IMAGE_NAME = 'medicine/front:latest'
+        REPO = 'trivy/front'
+        IMAGE_NAME = 'trivy/front:latest'
 
         TAG_VERSION = "v1.0.Beta"
         TAG = "${TAG_VERSION}${env.BUILD_ID}"
